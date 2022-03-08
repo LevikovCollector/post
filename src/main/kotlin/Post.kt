@@ -1,6 +1,6 @@
 import java.util.Objects
 
-data class Post(val id: Int = 0,
+data class Post(val id: Int = 1,
                 val ownerId: Int,
                 val authorId: Int,
                 val createdBy: Int,

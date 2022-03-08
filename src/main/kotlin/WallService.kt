@@ -7,7 +7,7 @@ class WallService {
             postArray += nPost
         }
         else{
-            postArray += post
+            postArray += post.copy(id = 1)
         }
 
         return postArray.last()
@@ -16,11 +16,11 @@ class WallService {
     fun update(post: Post): Boolean {
         for ((index, postFromArray) in postArray.withIndex()) {
             if (post.id == postFromArray.id) {
-                postArray[index] = postFromArray.copy(
-                    ownerId = post.ownerId,
+                postArray[index] = post.copy(
+                    ownerId = postFromArray.ownerId,
                     authorId = post.authorId,
                     createdBy = post.createdBy,
-                    date = post.date,
+                    date = postFromArray.date,
                     text = post.text,
                     replyOwnerId = post.replyOwnerId,
                     replyPostId = post.replyPostId,

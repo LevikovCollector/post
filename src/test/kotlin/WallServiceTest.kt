@@ -4,6 +4,14 @@ import org.junit.Test
 
 class WallServiceTest {
 
+    @Test
+    fun addPostToWall(){
+        val post = Post(ownerId = 11, authorId = 12, createdBy = 123, date = 12122020, text = "Text for post",replyOwnerId = 22,replyPostId = 33,friendsOnly = false,comments = Сomments(),
+            copyright = Copyright(12,"link", "info", "t2"), likes = Likes(), reposts = Reposts(), views = Views(), postType = "Test", signerId = 234,
+        canPin = true, canDelete = true, canEdit = true, isPinned = false, markedAsAds = true, isFavorite = false, donut = Donut(), postponedId = 90)
+
+        assertTrue(post.id != 0)
+    }
 
     @Test
     fun updateExisting() {
