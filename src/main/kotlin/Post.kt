@@ -1,5 +1,3 @@
-import java.util.Objects
-
 data class Post(val id: Int = 1,
                 val ownerId: Int,
                 val authorId: Int,
@@ -23,6 +21,10 @@ data class Post(val id: Int = 1,
                 val markedAsAds: Boolean,
                 val isFavorite: Boolean,
                 val donut: Donut,
-                val postponedId: Int) {
+                val postponedId: Int,
+                val geo: Geo?,
+                val postSource: postSource?,
+                val attachments:Array<Attachment>?,
+                val copyHistory:Array<Repost>?) {
 }
 
