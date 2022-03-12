@@ -2,9 +2,9 @@ name: Kotlin CI with Gradle
 
 on:
   push:
-    branches: [ master, main, levikov, HW_2_3 ]
+    branches: [ master, main, levikov, HW_2_3, HW_3_1 ]
   pull_request:
-    branches: [ master, main, levikov, HW_2_3 ]
+    branches: [ master, main, levikov, HW_2_3, HW_3_1 ]
 
 jobs:
   build:

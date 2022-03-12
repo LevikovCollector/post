@@ -1,5 +1,6 @@
 class WallService {
     private var postArray = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post{
         if (postArray.size != 0) {
@@ -45,5 +46,25 @@ class WallService {
             }
         }
         return false
+    }
+
+    fun createComment(comment: Comment) {
+        val commentsSize = comments.size
+
+        for ((index, postFromArray) in postArray.withIndex()) {
+            if (comment.postId == postFromArray.id) {
+                if (comments.size != 0) {
+                    val nPost = comment.copy(id = comments.last().id + 1)
+                    comments += nPost
+                }
+                else{
+                    comments += comment.copy(id = 1)
+                }
+            }
+    }
+        if (commentsSize +1 != comments.size){
+            throw PostNotFoundException("Пост не найден")
+        }
+
     }
 }
